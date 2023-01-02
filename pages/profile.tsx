@@ -8,7 +8,7 @@ export default function Profile() {
         <>
             <main className={`${global.main} ${global.container}`}>
                 <section>
-                    hello
+                    Profile
                 </section>
             </main>
         </>

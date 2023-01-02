@@ -11,7 +11,7 @@ export default function Subheader_component() {
     const {pathname} = useRouter()
     const startWith = pathname.startsWith("/admin")
 
-    return  isAuth && !startWith ? (
+    return  isAuth && !startWith && data?.email == "i.vanya.kolupaev@icloud.co" ? (
         <>
             <div className={styles.subheader}>
                 <div className={styles.bl}>

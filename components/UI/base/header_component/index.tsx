@@ -22,10 +22,10 @@ export default function Header_component() {
                 <Link onClick={() => setBurger(false)} className={styles.burger_menu_link} href="/catalog?gender=woman">Для неё</Link>
                 <Link onClick={() => setBurger(false)} className={styles.burger_menu_link} href="/catalog?gender=unisex">Унисекс</Link>
             </div>
-            <header className={`${styles.header} ${global.container}`}>
+            <header style={burger ? {position: "fixed", top: 0, width: "100%"} : {}} className={`${styles.header} ${global.container}`}>
                 <div className={styles.burger_container}>
                     <button onClick={() => setBurger(!burger)} className={burger ? `${styles.burger_active} ${styles.burger}` : styles.burger}>
-                        <div />
+                <div />
                     </button>
                 </div>
                 <Link onClick={() => setBurger(false)} className={styles.logo_container} href="/">

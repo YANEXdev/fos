@@ -1,7 +1,10 @@
 import styles from "./styles.module.css"
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Product_component() {
+
+    const router = useRouter()
 
     function shuffle(array: Array<number>) {
         return array.sort(() => Math.random() - 0.5);
@@ -33,9 +36,9 @@ export default function Product_component() {
 
     return (
         <>
-            <div className={styles.product}>
+            <div onClick={() => {router.push('/store')}} className={styles.product}>
                 <div style={{background: `rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.7)`}} className={styles.image}>
-                    <img loading="lazy" src={image_url} alt={title} style={{filter: `drop-shadow(19px 28px 20px rgba(${color[0] - 50}, ${color[1] - 50}, ${color[2] - 50}, 1))`}} />
+                    <img loading="lazy" src={image_url} alt={title} style={{filter: `drop-shadow(19px 28px 20px rgba(0, 0, 0, 0.4)`}} />
                 </div>
                 <div className={styles.info}>
                     <h2 className={styles.title}>{title}</h2>

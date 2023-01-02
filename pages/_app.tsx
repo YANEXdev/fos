@@ -37,7 +37,9 @@ function App({ Component, pageProps, ...rest }: AppProps) {
     <Provider store={store}>
       <AuthorizationForm />
       {!startWith && <Subheader_component/>}
-      {!startWith && <Header_component />}
+      {!startWith && <div style={{height: '120px'}}>
+        <Header_component />
+      </div>}
       <Component {...pageProps} />
       {!startWith && <Footer_component />}
     </Provider>
