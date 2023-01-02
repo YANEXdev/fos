@@ -9,6 +9,8 @@ export default function Profile() {
             <main className={`${global.main} ${global.container}`}>
                 <section>
                     Profile
+
+                    <button onClick={() => Api().user.Logout()}>Выйти</button>
                 </section>
             </main>
         </>
