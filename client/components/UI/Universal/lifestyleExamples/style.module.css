@@ -1,0 +1,53 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 40px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.example {
+    scroll-snap-align: start;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.example img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 4 / 3;
+    position: relative;
+}
+
+.controls {
+    left: 30px;
+    bottom: 20px;
+    position: absolute;
+    min-width: 50px;
+    max-width: calc(100% - 80px);
+    width: auto;
+    height: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.control {
+    cursor: pointer;
+    width: 30px;
+    height: 5px;
+    backdrop-filter: invert();
+}

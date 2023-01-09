@@ -1,0 +1,12 @@
+.alertBox {
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid #ff4444;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: #ff444477;
+}

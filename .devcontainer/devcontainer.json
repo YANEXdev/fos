@@ -4,12 +4,6 @@
     "hostRequirements": {
       "cpus": 4
     },
-    "waitFor": "onCreateCommand",
-    "updateContentCommand": "npm install && npm run build",
-    "postCreateCommand": "",
-    "postAttachCommand": {
-      "server": "npm run start"
-    },
     "customizations": {
       "codespaces": {
         "openFiles": [
@@ -19,9 +13,12 @@
     },
     "portsAttributes": {
       "3000": {
-        "label": "Application",
+        "label": "Client",
         "onAutoForward": "openPreview"
+      },
+      "5000": {
+        "label": "Server"
       }
     },
-    "forwardPorts": [3000]
+    "forwardPorts": [3000, 5000]
   }
