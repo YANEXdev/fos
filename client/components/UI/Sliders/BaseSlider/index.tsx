@@ -1,53 +1,35 @@
 import { useRouter } from "next/router"
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React from "react";
 import styles from "./style.module.css"
 
-export default function BaseSlider() {
-    const [slide, setSlide] = useState(0)
-    const router = useRouter()
-
-    const route = async (to: string) => await router.push(to);
-
-    const sliderRef = useRef<HTMLDivElement>(null)
-
-    const goToSlide = () => {
-        if (sliderRef && sliderRef.current && sliderRef.current.clientHeight) {
-            sliderRef.current.scrollLeft = slide * sliderRef.current.clientWidth   
-        }
+export default class BaseSlider extends React.Component {
+    constructor(props: any) {
+        super(props)
+        this.ref = React.createRef<HTMLDivElement>()
+        this.slide = 0
+        this.interval = setInterval(() => {
+            this.slide += 1
+            if (this.ref && this.ref.current && this.ref.current.clientWidth) {
+                if (this.slide+1 > this.ref.current.childElementCount) {
+                    this.slide = 0
+                }
+                this.ref.current.scrollLeft = Number(this.ref.current.clientWidth * this.slide)
+            }
+        }, 5000)
     }
 
-    setTimeout(() => {
-        if (sliderRef && sliderRef.current && sliderRef.current.clientHeight) {
-            if (sliderRef.current.childElementCount - 1 <= slide) {
-                setSlide(0)
-            } else {
-                setSlide(slide + 1)
-            }
-        }
-    }, 6000)
+    componentWillUnmount(): void {
+        this.interval.clearInterval
+    }
 
-    useEffect(() => {
-        goToSlide()
-    }, [slide])
+    interval: any
+    slide: number
+    ref: any
 
-    return (
-        <>
-            <div ref={sliderRef} className={styles.base}>
-                <section className={styles.banner}>
-                    <img src="" alt="" />
-                </section>
-                <section className={styles.banner}>
-                    <img src="" alt="" />
-                </section>
-                <section className={styles.banner}>
-                    <img src="" alt="" />
-                </section>
-                <section className={styles.banner}>
-                    <img src="" alt="" />
-                </section>
-                <section className={styles.banner}>
-                    <img src="" alt="" />
-                </section>
+    render() {
+        return (
+            <>
+            <div ref={this.ref} className={styles.base}>
                 <section className={styles.banner}>
                     <img src="" alt="" />
                 </section>
@@ -59,5 +41,6 @@ export default function BaseSlider() {
                 </section>
             </div>
         </>
-    )
+        )
+    }
 }

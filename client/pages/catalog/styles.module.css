@@ -1,0 +1,44 @@
+
+.main {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    gap: 40px;
+}
+
+
+.filters {
+    min-width: 270px;
+    display: flex;
+    flex-direction: column;
+    background: #cfcfcf;
+}
+
+.paramTitle {
+
+}
+
+.catalog {
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    gap: 40px
+}
+
+.catalogTitle {
+    font-size: 38px;
+    margin: 0;
+    padding: 0;
+}
+
+.productList {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1000px) {
+    .filters {
+        display: none;
+    }
+}

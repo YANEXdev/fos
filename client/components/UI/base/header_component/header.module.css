@@ -97,17 +97,20 @@
     order: 1;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 40px;
+    width: 345px;
 }
 
 .link {
     font-weight: 300;
     font-size: 20px;
     color: #000000;
+    transition: 0.3s ease-in-out;
 }
 
 .link:hover {
-    font-weight: 500;
+    color: #5900ff;
 }
 
 .tools {

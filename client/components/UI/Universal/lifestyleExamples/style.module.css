@@ -1,11 +1,27 @@
+.mainBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.seg {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: calc(50% - 20px);
+}
+
 .main {
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    overflow-x: scroll;
     box-sizing: border-box;
-    border-radius: 40px;
+    border-radius: 25px;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 }
@@ -28,8 +44,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
     position: relative;
+    max-width: 600px;
 }
 
 .controls {
@@ -50,4 +67,28 @@
     width: 30px;
     height: 5px;
     backdrop-filter: invert();
+}
+
+@media screen and (max-width: 1320px) {
+    .mainBox {
+        flex-direction: column;
+    }
+    
+    .seg {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .seg {
+        flex-direction: column;
+    }
+
+    .main {
+        aspect-ratio: 1 / 1;
+    }
+
+    .container {
+        aspect-ratio: 1 / 1;
+    }
 }

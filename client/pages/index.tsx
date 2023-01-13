@@ -12,8 +12,8 @@ const Home: NextPage = (props) => {
         <>
             <main className={`${global.main} ${global.container}`}>
                 <BaseSlider />
-                <LifestyleEmapmles />
                 <NewProducts_component />
+                <LifestyleEmapmles />
             </main>
 
         </>
