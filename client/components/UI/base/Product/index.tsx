@@ -7,15 +7,23 @@ export default function Product_component() {
     const router = useRouter()
 
     function shuffle(array: Array<number>) {
-        return array.sort(() => Math.random() - 0.5);
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array
     }
 
     function simpleColor() {
-        let f = 255
-        let s = Math.random() * (255 - 125) + 125
-        let t = 125
+
+        const min = 90
+
+        const f = 255
+        const s = min
+        const t = min + (Math.random() * (230 - min))
 
         let arr = shuffle([f, s, t])
+        arr = shuffle(arr)
 
         return arr
 

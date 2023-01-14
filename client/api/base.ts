@@ -4,6 +4,7 @@ import Cookies, {parseCookies} from "nookies";
 
 import {GetServerSidePropsContext, NextPageContext} from "next";
 import {UserApi} from "./auth";
+import { SeoApi } from "./seo";
 
 export const Api = (ctx?: NextPageContext | GetServerSidePropsContext) => {
     const cookies = ctx ? Cookies.get(ctx) : parseCookies();
@@ -17,6 +18,7 @@ export const Api = (ctx?: NextPageContext | GetServerSidePropsContext) => {
 
     return {
         Instance: instance,
-        user: UserApi(instance)
+        user: UserApi(instance),
+        seo: SeoApi(instance),
     }
 }

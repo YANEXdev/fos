@@ -2,10 +2,15 @@ import global from "../styles/global.module.css"
 import {GetServerSideProps} from "next";
 import {wrapper} from "../redux/store";
 import {Api} from "../api/base";
+import Head from "next/head";
 
-export default function Profile() {
+export default function Profile(props: any) {
+    const profilePage = props.seo.page.profilePage
     return (
         <>
+            <Head>
+                <title>{profilePage.title}</title>
+            </Head>
             <main className={`${global.main} ${global.container}`}>
                 <section>
                     Profile

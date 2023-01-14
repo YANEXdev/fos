@@ -116,21 +116,21 @@ class BaseSlider extends (react__WEBPACK_IMPORTED_MODULE_1___default().Component
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
                         className: (_style_module_css__WEBPACK_IMPORTED_MODULE_2___default().banner),
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                            src: "",
+                            src: "/baseslider/1.jpg",
                             alt: ""
                         })
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
                         className: (_style_module_css__WEBPACK_IMPORTED_MODULE_2___default().banner),
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                            src: "",
+                            src: "/baseslider/2.jpg",
                             alt: ""
                         })
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
                         className: (_style_module_css__WEBPACK_IMPORTED_MODULE_2___default().banner),
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                            src: "",
+                            src: "/baseslider/3.jpg",
                             alt: ""
                         })
                     })
@@ -374,17 +374,26 @@ class LifestyleEmapmles extends (external_react_default()).Component {
 function Product_component() {
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
     function shuffle(array) {
-        return array.sort(()=>Math.random() - 0.5);
+        for(let i = array.length - 1; i > 0; i--){
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [
+                array[j],
+                array[i]
+            ];
+        }
+        return array;
     }
     function simpleColor() {
-        let f = 255;
-        let s = Math.random() * (255 - 125) + 125;
-        let t = 125;
+        const min = 90;
+        const f = 255;
+        const s = min;
+        const t = min + Math.random() * (230 - min);
         let arr = shuffle([
             f,
             s,
             t
         ]);
+        arr = shuffle(arr);
         return arr;
     }
     const color = simpleColor();
@@ -455,11 +464,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_global_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(437);
-/* harmony import */ var _styles_global_module_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_global_module_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(437);
+/* harmony import */ var _styles_global_module_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_UI_Universal_NewProducts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7642);
 /* harmony import */ var _components_UI_Sliders_BaseSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(490);
 /* harmony import */ var _components_UI_Universal_lifestyleExamples__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6905);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(968);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_UI_Universal_NewProducts__WEBPACK_IMPORTED_MODULE_1__]);
 _components_UI_Universal_NewProducts__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -467,16 +478,25 @@ _components_UI_Universal_NewProducts__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_a
 
 
 
+
 const Home = (props)=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("main", {
-            className: `${(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_4___default().main)} ${(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_4___default().container)}`,
-            children: [
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_Sliders_BaseSlider__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {}),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_Universal_NewProducts__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {}),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_Universal_lifestyleExamples__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {})
-            ]
-        })
+    const indexPage = props.seo.page.indexPage;
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_4___default()), {
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                    children: indexPage.title
+                })
+            }),
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("main", {
+                className: `${(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_5___default().main)} ${(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_5___default().container)}`,
+                children: [
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_Sliders_BaseSlider__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {}),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_Universal_NewProducts__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {}),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_Universal_lifestyleExamples__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {})
+                ]
+            })
+        ]
     });
 };
 const getServerSideProps = async (ctx)=>{
@@ -744,6 +764,14 @@ module.exports = require("next/dist/shared/lib/utils.js");
 
 "use strict";
 module.exports = require("next/dist/shared/lib/utils/warn-once.js");
+
+/***/ }),
+
+/***/ 968:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/head");
 
 /***/ }),
 

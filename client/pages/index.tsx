@@ -1,15 +1,20 @@
 import type {GetServerSideProps, NextPage} from 'next'
-import axios from "axios";
 import global from "../styles/global.module.css";
 import NewProducts_component from "../components/UI/Universal/NewProducts";
 import BaseSlider from '../components/UI/Sliders/BaseSlider';
 import LifestyleEmapmles from '../components/UI/Universal/lifestyleExamples';
+import Head from 'next/head';
 
 
-const Home: NextPage = (props) => {
-
+const Home: NextPage = (props: any) => {
+    const indexPage = props.seo.page.indexPage
     return (
         <>
+            <Head>
+                <title>
+                    {indexPage.title}
+                </title>
+            </Head>
             <main className={`${global.main} ${global.container}`}>
                 <BaseSlider />
                 <NewProducts_component />

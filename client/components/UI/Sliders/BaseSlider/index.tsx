@@ -31,13 +31,13 @@ export default class BaseSlider extends React.Component {
             <>
             <div ref={this.ref} className={styles.base}>
                 <section className={styles.banner}>
-                    <img src="" alt="" />
+                    <img src="/baseslider/1.jpg" alt="" />
                 </section>
                 <section className={styles.banner}>
-                    <img src="" alt="" />
+                    <img src="/baseslider/2.jpg" alt="" />
                 </section>
                 <section className={styles.banner}>
-                    <img src="" alt="" />
+                    <img src="/baseslider/3.jpg" alt="" />
                 </section>
             </div>
         </>

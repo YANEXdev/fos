@@ -2,10 +2,15 @@ import global from "../styles/global.module.css"
 import {GetServerSideProps} from "next";
 import {wrapper} from "../redux/store";
 import {Api} from "../api/base";
+import Head from "next/head";
 
-export default function Cart() {
+export default function Cart(props:any) {
+    const cartPage = props.seo.page.cartPage
     return (
         <>
+            <Head>
+                <title>{cartPage.title}</title>
+            </Head>
             <main className={`${global.main} ${global.container}`}>
                 <section>
                     Cart

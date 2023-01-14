@@ -58,8 +58,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var nookies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3053);
 /* harmony import */ var nookies__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nookies__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9355);
+/* harmony import */ var _seo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1837);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_0__]);
 axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -74,12 +76,74 @@ const Api = (ctx)=>{
     });
     return {
         Instance: instance,
-        user: (0,_auth__WEBPACK_IMPORTED_MODULE_2__/* .UserApi */ .W)(instance)
+        user: (0,_auth__WEBPACK_IMPORTED_MODULE_2__/* .UserApi */ .W)(instance),
+        seo: (0,_seo__WEBPACK_IMPORTED_MODULE_3__/* .SeoApi */ .N)(instance)
     };
 };
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 1837:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "N": () => (/* binding */ SeoApi)
+/* harmony export */ });
+const SeoApi = (instance)=>{
+    const Get = async ()=>{
+        try {
+            const { data  } = await instance.get("/seo/get");
+            return data;
+        } catch (err) {
+            return {
+                header: {
+                    forHim: "Для него",
+                    forHer: "Для неё",
+                    unisex: "Унисекс"
+                },
+                footer: {
+                    info: {
+                        about: "О нас",
+                        agreement: "Соглашение",
+                        payment: "Оплата",
+                        delivery: "Доставка"
+                    },
+                    links: {
+                        youtube: "https://www.youtube.com/@fos3203",
+                        instagram: "https://instagram.com/fos_ru",
+                        telegram: "https://t.me/+zqcxV21mNNkzNzJi",
+                        vk: "https://vk.com/foswear",
+                        mail: "/"
+                    }
+                },
+                page: {
+                    indexPage: {
+                        title: "FOS"
+                    },
+                    errorPage: {
+                        title: "404"
+                    },
+                    catalogPage: {
+                        title: "Каталог"
+                    },
+                    cartPage: {
+                        title: "Корзина"
+                    },
+                    profilePage: {
+                        title: "Профиль"
+                    }
+                }
+            };
+        }
+    };
+    return {
+        Get
+    };
+};
+
 
 /***/ })
 

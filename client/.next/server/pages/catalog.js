@@ -51,74 +51,75 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2818:
+/***/ 6599:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ Catalog)
-});
-
-// EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__(997);
-// EXTERNAL MODULE: external "next/router"
-var router_ = __webpack_require__(1853);
-// EXTERNAL MODULE: ./components/UI/forCatalog/Product/styles.module.css
-var styles_module = __webpack_require__(2975);
-var styles_module_default = /*#__PURE__*/__webpack_require__.n(styles_module);
-// EXTERNAL MODULE: ./node_modules/next/link.js
-var next_link = __webpack_require__(1664);
-var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
-;// CONCATENATED MODULE: ./components/UI/forCatalog/Product/index.tsx
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (/* binding */ CatalogProduct_component)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2975);
+/* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_module_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 
 function CatalogProduct_component({ fetching =false , data ={}  }) {
     function shuffle(array) {
-        return array.sort(()=>Math.random() - 0.5);
+        for(let i = array.length - 1; i > 0; i--){
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [
+                array[j],
+                array[i]
+            ];
+        }
+        return array;
     }
     function simpleColor() {
-        let f = 255;
-        let s = Math.random() * (255 - 125) + 125;
-        let t = 125;
+        const min = 90;
+        const f = 255;
+        const s = min;
+        const t = min + Math.random() * (230 - min);
         let arr = shuffle([
             f,
             s,
             t
         ]);
+        arr = shuffle(arr);
         return arr;
     }
     const color = simpleColor();
-    const router = (0,router_.useRouter)();
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
     if (fetching || !data.id) {
-        return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
-            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                className: (styles_module_default()).product,
+        return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().product),
                 children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                        className: (styles_module_default()).image_loader
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().image_loader)
                     }),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                        className: (styles_module_default()).info,
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().info),
                         children: [
-                            /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                                className: (styles_module_default()).title,
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().title),
                                 children: "Загрузка..."
                             }),
-                            /*#__PURE__*/ jsx_runtime_.jsx("p", {
-                                className: (styles_module_default()).category,
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().category),
                                 children: "Загрузка..."
                             })
                         ]
                     }),
-                    /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                         href: "",
-                        className: (styles_module_default()).toProduct_loader,
+                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().toProduct_loader),
                         children: "Загрузка..."
                     })
                 ]
@@ -126,19 +127,19 @@ function CatalogProduct_component({ fetching =false , data ={}  }) {
         });
     } else {
         const { id , title , price , image_url , category  } = data;
-        return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
-            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 onClick: ()=>{
-                    router.push("/store");
+                    router.push(`/product/${id}`);
                 },
-                className: (styles_module_default()).product,
+                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().product),
                 children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                         style: {
                             background: `rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.7)`
                         },
-                        className: (styles_module_default()).image,
-                        children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().image),
+                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                             loading: "lazy",
                             src: image_url,
                             alt: title,
@@ -147,22 +148,22 @@ function CatalogProduct_component({ fetching =false , data ={}  }) {
                             }
                         })
                     }),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                        className: (styles_module_default()).info,
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().info),
                         children: [
-                            /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                                className: (styles_module_default()).title,
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().title),
                                 children: title
                             }),
-                            /*#__PURE__*/ jsx_runtime_.jsx("p", {
-                                className: (styles_module_default()).category,
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().category),
                                 children: category[1]
                             })
                         ]
                     }),
-                    /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                         href: "/",
-                        className: (styles_module_default()).toProduct,
+                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_3___default().toProduct),
                         children: price
                     })
                 ]
@@ -171,222 +172,331 @@ function CatalogProduct_component({ fetching =false , data ={}  }) {
     }
 }
 
-// EXTERNAL MODULE: ./styles/global.module.css
-var global_module = __webpack_require__(437);
-var global_module_default = /*#__PURE__*/__webpack_require__.n(global_module);
-// EXTERNAL MODULE: ./pages/catalog/styles.module.css
-var catalog_styles_module = __webpack_require__(4688);
-var catalog_styles_module_default = /*#__PURE__*/__webpack_require__.n(catalog_styles_module);
-;// CONCATENATED MODULE: ./pages/catalog/index.tsx
+
+/***/ }),
+
+/***/ 5385:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "A": () => (/* binding */ useFetchApi)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _api_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2082);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_api_base__WEBPACK_IMPORTED_MODULE_1__]);
+_api_base__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+function useFetchApi() {
+    const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const Get = async (url)=>{
+        try {
+            setLoading(true);
+            const { data  } = await (0,_api_base__WEBPACK_IMPORTED_MODULE_1__/* .Api */ .V)().Instance.get(url);
+            setTimeout(()=>{
+                setLoading(false);
+                return data;
+            }, 3000);
+        } catch (err) {
+            setLoading(false);
+            throw new Error(err.response.data.message);
+        }
+    };
+    return {
+        Get,
+        loading
+    };
+}
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 2250:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Catalog)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6599);
+/* harmony import */ var _hook_fetch_hook__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5385);
+/* harmony import */ var _styles_global_module_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(437);
+/* harmony import */ var _styles_global_module_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4688);
+/* harmony import */ var _styles_module_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_module_css__WEBPACK_IMPORTED_MODULE_6__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_hook_fetch_hook__WEBPACK_IMPORTED_MODULE_4__]);
+_hook_fetch_hook__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
 
-function Catalog() {
-    return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
-        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("main", {
-            className: `${(global_module_default()).main} ${(global_module_default()).container} ${(catalog_styles_module_default()).main}`,
-            children: [
-                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("section", {
-                    className: (catalog_styles_module_default()).filters,
-                    children: [
-                        /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                            className: (catalog_styles_module_default()).paramTitle,
-                            children: "Тип"
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                            className: (catalog_styles_module_default()).params,
-                            children: [
-                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                    className: (catalog_styles_module_default()).typeSelection,
-                                    children: /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                                        children: "Худи"
-                                    })
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                    className: (catalog_styles_module_default()).typeSelection,
-                                    children: /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                                        children: "Футболки"
-                                    })
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                    className: (catalog_styles_module_default()).typeSelection,
-                                    children: /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                                        children: "Брюки"
-                                    })
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                    className: (catalog_styles_module_default()).typeSelection,
-                                    children: [
-                                        /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                                            children: "Шорты"
-                                        }),
-                                        /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                                            children: "Носки"
-                                        })
-                                    ]
-                                })
-                            ]
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("section", {
-                    className: (catalog_styles_module_default()).catalog,
-                    children: [
-                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                            style: {
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "space-between"
-                            },
-                            children: [
-                                /*#__PURE__*/ jsx_runtime_.jsx("h1", {
-                                    className: (catalog_styles_module_default()).catalogTitle,
-                                    children: "Худи"
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                    children: [
-                                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                                            children: "Фильтры"
-                                        }),
-                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("select", {
-                                            name: "",
-                                            id: "",
-                                            children: [
-                                                /*#__PURE__*/ jsx_runtime_.jsx("option", {
-                                                    children: "Новизна"
-                                                }),
-                                                /*#__PURE__*/ jsx_runtime_.jsx("option", {
-                                                    children: "Популярность"
-                                                }),
-                                                /*#__PURE__*/ jsx_runtime_.jsx("option", {
-                                                    children: "Цена: по убыванию"
-                                                }),
-                                                /*#__PURE__*/ jsx_runtime_.jsx("option", {
-                                                    children: "Цена: по возрастанию"
-                                                })
-                                            ]
-                                        })
-                                    ]
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                            className: (catalog_styles_module_default()).productList,
-                            children: [
-                                /*#__PURE__*/ jsx_runtime_.jsx(CatalogProduct_component, {
-                                    fetching: false,
-                                    data: {
-                                        id: 12,
-                                        title: "Entry",
-                                        price: "1299.00",
-                                        image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
-                                        category: [
-                                            "hoodies",
-                                            "Худи"
-                                        ]
-                                    }
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(CatalogProduct_component, {
-                                    fetching: false,
-                                    data: {
-                                        id: 12,
-                                        title: "Entry",
-                                        price: "1299.00",
-                                        image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
-                                        category: [
-                                            "hoodies",
-                                            "Худи"
-                                        ]
-                                    }
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(CatalogProduct_component, {
-                                    fetching: false,
-                                    data: {
-                                        id: 12,
-                                        title: "Entry",
-                                        price: "1299.00",
-                                        image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
-                                        category: [
-                                            "hoodies",
-                                            "Худи"
-                                        ]
-                                    }
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(CatalogProduct_component, {
-                                    fetching: true,
-                                    data: {
-                                        id: 12,
-                                        title: "Entry",
-                                        price: "1299.00",
-                                        image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
-                                        category: [
-                                            "hoodies",
-                                            "Худи"
-                                        ]
-                                    }
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(CatalogProduct_component, {
-                                    fetching: true,
-                                    data: {
-                                        id: 12,
-                                        title: "Entry",
-                                        price: "1299.00",
-                                        image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
-                                        category: [
-                                            "hoodies",
-                                            "Худи"
-                                        ]
-                                    }
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(CatalogProduct_component, {
-                                    fetching: true,
-                                    data: {
-                                        id: 12,
-                                        title: "Entry",
-                                        price: "1299.00",
-                                        image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
-                                        category: [
-                                            "hoodies",
-                                            "Худи"
-                                        ]
-                                    }
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(CatalogProduct_component, {
-                                    fetching: true,
-                                    data: {
-                                        id: 12,
-                                        title: "Entry",
-                                        price: "1299.00",
-                                        image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
-                                        category: [
-                                            "hoodies",
-                                            "Худи"
-                                        ]
-                                    }
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(CatalogProduct_component, {
-                                    fetching: true,
-                                    data: {
-                                        id: 12,
-                                        title: "Entry",
-                                        price: "1299.00",
-                                        image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
-                                        category: [
-                                            "hoodies",
-                                            "Худи"
-                                        ]
-                                    }
-                                })
-                            ]
-                        })
-                    ]
+
+
+
+function Catalog(props) {
+    const catalogPage = props.seo.page.catalogPage;
+    const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]);
+    const { Get , loading  } = (0,_hook_fetch_hook__WEBPACK_IMPORTED_MODULE_4__/* .useFetchApi */ .A)();
+    const getProducts = async ()=>{
+        try {
+            const fetched = await Get("/product/getAll?get=0");
+            setData(fetched);
+            console.log(fetched);
+        } catch (e) {}
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{
+        getProducts();
+    }, []);
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                    children: catalogPage.title
                 })
-            ]
-        })
+            }),
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("main", {
+                className: `${(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_5___default().main)} ${(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_5___default().container)} ${(_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().main)}`,
+                children: [
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("section", {
+                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().filters),
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().paramTitle),
+                                children: "Тип"
+                            }),
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().params),
+                                children: [
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().typeSelection),
+                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                            children: "Худи"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().typeSelection),
+                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                            children: "Футболки"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().typeSelection),
+                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                            children: "Брюки"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().typeSelection),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                                children: "Шорты"
+                                            }),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                                children: "Носки"
+                                            })
+                                        ]
+                                    })
+                                ]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("section", {
+                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().catalog),
+                        children: [
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                style: {
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "space-between"
+                                },
+                                children: [
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
+                                        className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().catalogTitle),
+                                        children: "Худи"
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                children: "Фильтры"
+                                            }),
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("select", {
+                                                name: "",
+                                                id: "",
+                                                children: [
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("option", {
+                                                        children: "Новизна"
+                                                    }),
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("option", {
+                                                        children: "Популярность"
+                                                    }),
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("option", {
+                                                        children: "Цена: по убыванию"
+                                                    }),
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("option", {
+                                                        children: "Цена: по возрастанию"
+                                                    })
+                                                ]
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                className: (_styles_module_css__WEBPACK_IMPORTED_MODULE_6___default().productList),
+                                children: loading ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                                    children: [
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            fetching: true
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            fetching: true
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            fetching: true
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            fetching: true
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            fetching: true
+                                        })
+                                    ]
+                                }) : /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                                    children: [
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_forCatalog_Product__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+                                            data: {
+                                                id: 12,
+                                                title: "Entry",
+                                                price: "1299.00",
+                                                image_url: "https://www.pngarts.com/files/11/Sweatshirt-Hoodie-PNG-Photo.png",
+                                                category: [
+                                                    "hoodies",
+                                                    "Худи"
+                                                ]
+                                            }
+                                        })
+                                    ]
+                                })
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
     });
 }
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -582,11 +692,27 @@ module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
 
+/***/ 968:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/head");
+
+/***/ }),
+
 /***/ 1853:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("next/router");
+
+/***/ }),
+
+/***/ 3053:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("nookies");
 
 /***/ }),
 
@@ -612,6 +738,14 @@ module.exports = require("react-dom");
 "use strict";
 module.exports = require("react/jsx-runtime");
 
+/***/ }),
+
+/***/ 9648:
+/***/ ((module) => {
+
+"use strict";
+module.exports = import("axios");;
+
 /***/ })
 
 };
@@ -621,7 +755,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,676,664], () => (__webpack_exec__(2818)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,676,664,82], () => (__webpack_exec__(2250)));
 module.exports = __webpack_exports__;
 
 })();

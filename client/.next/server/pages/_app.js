@@ -344,7 +344,8 @@ __webpack_async_result__();
 
 
 
-function Footer_component() {
+function Footer_component({ seo  }) {
+    const data = seo.footer;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("footer", {
             className: `${(_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().footer)} ${(_styles_global_module_css__WEBPACK_IMPORTED_MODULE_3___default().container)}`,
@@ -355,22 +356,22 @@ function Footer_component() {
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
                             href: "/info/about",
-                            children: "О компании"
+                            children: data.info.about
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
                             href: "/info/agreement",
-                            children: "Соглашение"
+                            children: data.info.agreement
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
-                            href: "/info/paymnet",
-                            children: "Оплата"
+                            href: "/info/payment",
+                            children: data.info.payment
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
-                            href: "/info/delivery>Доставка",
-                            children: "Доставка"
+                            href: "/info/delivery",
+                            children: data.info.delivery
                         })
                     ]
                 }),
@@ -388,7 +389,7 @@ function Footer_component() {
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
-                            href: "https://www.youtube.com/@fos3203",
+                            href: data.links.youtube,
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                 src: "/social_links/youtube.png",
                                 alt: ""
@@ -396,7 +397,7 @@ function Footer_component() {
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
-                            href: "https://instagram.com/fos_ru",
+                            href: data.links.instagram,
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                 src: "/social_links/instagram.png",
                                 alt: ""
@@ -404,7 +405,7 @@ function Footer_component() {
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
-                            href: "https://t.me/+zqcxV21mNNkzNzJi",
+                            href: data.links.telegram,
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                 src: "/social_links/telegram.png",
                                 alt: ""
@@ -412,7 +413,7 @@ function Footer_component() {
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
-                            href: "https://vk.com/foswear",
+                            href: data.links.vk,
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                 src: "/social_links/vk.png",
                                 alt: ""
@@ -420,7 +421,7 @@ function Footer_component() {
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             className: (_footer_module_css__WEBPACK_IMPORTED_MODULE_2___default().info_link),
-                            href: "/",
+                            href: data.links.mail,
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                 src: "/social_links/gmail.png",
                                 alt: ""
@@ -467,7 +468,7 @@ function Footer_component() {
 
 
 
-function Header_component() {
+function Header_component({ seo  }) {
     const { isAuth , data  } = (0,_redux_hooks__WEBPACK_IMPORTED_MODULE_3__/* .useAppSelector */ .C)(_redux_slices_user__WEBPACK_IMPORTED_MODULE_4__/* .selectUserData */ .tT);
     const [burger, setBurger] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
     const dispatch = (0,_redux_hooks__WEBPACK_IMPORTED_MODULE_3__/* .useAppDispatch */ .T)();
@@ -479,6 +480,7 @@ function Header_component() {
             }
         });
     }, []);
+    const headerData = seo.header;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -488,19 +490,19 @@ function Header_component() {
                         onClick: ()=>setBurger(false),
                         className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().burger_menu_link),
                         href: "/catalog?gender=men",
-                        children: "Для него"
+                        children: headerData.forHim
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                         onClick: ()=>setBurger(false),
                         className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().burger_menu_link),
                         href: "/catalog?gender=woman",
-                        children: "Для неё"
+                        children: headerData.forHer
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                         onClick: ()=>setBurger(false),
                         className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().burger_menu_link),
                         href: "/catalog?gender=unisex",
-                        children: "Унисекс"
+                        children: headerData.unisex
                     })
                 ]
             }),
@@ -537,27 +539,43 @@ function Header_component() {
                                 onClick: ()=>setBurger(false),
                                 className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().link),
                                 href: "/catalog?gender=men",
-                                children: "Для него"
+                                children: headerData.forHim
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                                 onClick: ()=>setBurger(false),
                                 className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().link),
                                 href: "/catalog?gender=woman",
-                                children: "Для неё"
+                                children: headerData.forHer
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                                 onClick: ()=>setBurger(false),
                                 className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().link),
                                 href: "/catalog?gender=unisex",
-                                children: "Унисекс"
+                                children: headerData.unisex
                             })
                         ]
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().tools),
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                                onClick: ()=>setBurger(false),
+                            !isAuth ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+                                onClick: ()=>{
+                                    setBurger(false);
+                                    dispatch((0,_redux_slices_ui__WEBPACK_IMPORTED_MODULE_5__/* .setAuthFormRedirect */ .lc)(""));
+                                    dispatch((0,_redux_slices_ui__WEBPACK_IMPORTED_MODULE_5__/* .setAuthFormMessage */ .O1)(""));
+                                    dispatch((0,_redux_slices_ui__WEBPACK_IMPORTED_MODULE_5__/* .setAuthFormShow */ .TO)(true));
+                                },
+                                href: "/cart",
+                                className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().tool),
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                    className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().icon),
+                                    src: "/base/cart.png",
+                                    alt: ""
+                                })
+                            }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+                                onClick: ()=>{
+                                    setBurger(false);
+                                },
                                 href: "/cart",
                                 className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().tool),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
@@ -660,12 +678,26 @@ function App({ Component , pageProps , ...rest }) {
     const isAuth = store.getState().user.isAuth;
     const { pathname  } = (0,next_router__WEBPACK_IMPORTED_MODULE_9__.useRouter)();
     const startWith = pathname.startsWith("/admin");
+    const { seo  } = pageProps;
+    console.log(seo);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_5___default()), {
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
                         children: "FOS"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                        name: "robots",
+                        content: "index,follow"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                        name: "keywords",
+                        content: "FOS, Fos, fos, FOSWEAR, Foswear, foswear, одежда, худи, брюки, толстовки"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                        name: "description",
+                        content: "Описание страницы"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         name: "viewport",
@@ -682,12 +714,16 @@ function App({ Component , pageProps , ...rest }) {
                         style: {
                             height: "120px"
                         },
-                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_base_header_component__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {})
+                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_base_header_component__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
+                            seo: seo
+                        })
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
                         ...pageProps
                     }),
-                    !startWith && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_base_footer_component__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {})
+                    !startWith && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_UI_base_footer_component__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+                        seo: seo
+                    })
                 ]
             })
         ]
@@ -701,12 +737,15 @@ App.getInitialProps = _redux_store__WEBPACK_IMPORTED_MODULE_2__/* .wrapper.getIn
                 store.dispatch((0,_redux_slices_user__WEBPACK_IMPORTED_MODULE_3__/* .setUserAuth */ .rP)(true));
             }
         } catch (err) {}
+        const seo = await (0,_api_base__WEBPACK_IMPORTED_MODULE_4__/* .Api */ .V)(ctx).seo.Get();
         return {
             pageProps: {
                 ...Component.getInitialProps ? await Component.getInitialProps({
                     ...ctx,
                     store
-                }) : {}
+                }) : {
+                    seo
+                }
             }
         };
     });
