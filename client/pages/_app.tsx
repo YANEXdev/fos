@@ -29,17 +29,24 @@ function App({ Component, pageProps, ...rest }: AppProps) {
 
   const startWith = pathname.startsWith('/admin')
 
+  const {seo} = pageProps
+
   return <>
     <Head>
       <title>FOS</title>
+      <meta name="robots" content="index,follow" />
+      <meta name="keywords" content="FOS, Fos, fos, FOSWEAR, Foswear, foswear, одежда, худи, брюки, толстовки" />
+      <meta name="description" content="Описание страницы"></meta>
       <meta name="viewport" content="width=device-width, initial-scale=0.8 user-scalable=no" />
     </Head>
     <Provider store={store}>
       <AuthorizationForm />
       {!startWith && <Subheader_component/>}
-      {!startWith && <Header_component />}
+      {!startWith && <div style={{height: '120px'}}>
+        <Header_component seo={seo} />
+      </div>}
       <Component {...pageProps} />
-      {!startWith && <Footer_component />}
+      {!startWith && <Footer_component seo={seo} />}
     </Provider>
   </>
 }
@@ -47,6 +54,7 @@ function App({ Component, pageProps, ...rest }: AppProps) {
 App.getInitialProps = wrapper.getInitialAppProps((store) => async ({ ctx, Component }) => {
   try {
     const {userData} = await Api(ctx).user.GetMe()
+    
     if (userData) {
       store.dispatch(setUserData(userData))
       store.dispatch(setUserAuth(true))
@@ -56,9 +64,12 @@ App.getInitialProps = wrapper.getInitialAppProps((store) => async ({ ctx, Compon
 
   }
 
+  const seo = await Api(ctx).seo.Get()
+  
+
   return {
     pageProps: {
-      ...(Component.getInitialProps ? await Component.getInitialProps({... ctx, store}) : {}),
+      ...(Component.getInitialProps ? await Component.getInitialProps({... ctx, store,}) : {seo}),
     },
   };
 });

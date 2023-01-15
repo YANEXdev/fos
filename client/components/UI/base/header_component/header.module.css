@@ -7,7 +7,7 @@
     justify-content: space-between;
     height: 120px;
     gap: 20px;
-    z-index: 100;
+    z-index: 10;
     position: relative;
     background: #ffffff;
 }
@@ -104,10 +104,11 @@
     font-weight: 300;
     font-size: 20px;
     color: #000000;
+    transition: 0.3s ease-in-out;
 }
 
 .link:hover {
-    font-weight: 500;
+    color: #5900ff;
 }
 
 .tools {

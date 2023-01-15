@@ -1,0 +1,17 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.js",
+  "/catalog": "pages/catalog.js",
+  "/product/[id]": "pages/product/[id].js",
+  "/admin/[tool]": "pages/admin/[tool].js",
+  "/admin/access-denied": "pages/admin/access-denied.js",
+  "/admin/auth": "pages/admin/auth.js",
+  "/admin": "pages/admin.js",
+  "/admin/profile": "pages/admin/profile.js",
+  "/cart": "pages/cart.js",
+  "/": "pages/index.js",
+  "/info/[info]": "pages/info/[info].js",
+  "/profile": "pages/profile.js"
+}
