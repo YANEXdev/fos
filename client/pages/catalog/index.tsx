@@ -18,7 +18,6 @@ export default function Catalog(props: any) {
         try {
             const fetched: any = await Get('/product/getAll?get=0')
             setData(fetched)
-            console.log(fetched)
         } catch(e) {
 
         }

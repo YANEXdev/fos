@@ -36,13 +36,13 @@ export default class Slider extends React.Component {
                         </div>
                         <div ref={this.ref} className={styles.main}>
                             <section className={styles.example}>
-                                <Image loading="eager" src="/lifestyle/1.jpg" alt="Picture of the author" width={500} height={500} />
+                                <Image loading="eager" src="/lifestyle/1.png" alt="Picture of the author" width={800} height={800} />
                             </section>
                             <section className={styles.example}>
-                                <Image loading="eager" src="/lifestyle/2.jpg" alt="Picture of the author" width={500} height={500} />
+                                <Image loading="eager" src="/lifestyle/2.png" alt="Picture of the author" width={800} height={800} />
                             </section>
                             <section className={styles.example}>
-                                <Image loading="eager" src="/lifestyle/3.jpg" alt="Picture of the author" width={500} height={500} />
+                                <Image loading="eager" src="/lifestyle/3.png" alt="Picture of the author" width={800} height={800} />
                             </section>
                         </div>
                     </div>

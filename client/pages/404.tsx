@@ -3,7 +3,6 @@ import global from "../styles/global.module.css";
 
 export default function Custom404(props: any) {
 
-    console.log(props)
     const errorPage = props.seo.page.errorPage
 
     return (

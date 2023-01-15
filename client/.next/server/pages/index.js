@@ -279,30 +279,30 @@ class Slider extends (external_react_default()).Component {
                                 className: (style_module_default()).example,
                                 children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                     loading: "eager",
-                                    src: "/lifestyle/1.jpg",
+                                    src: "/lifestyle/1.png",
                                     alt: "Picture of the author",
-                                    width: 500,
-                                    height: 500
+                                    width: 800,
+                                    height: 800
                                 })
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx("section", {
                                 className: (style_module_default()).example,
                                 children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                     loading: "eager",
-                                    src: "/lifestyle/2.jpg",
+                                    src: "/lifestyle/2.png",
                                     alt: "Picture of the author",
-                                    width: 500,
-                                    height: 500
+                                    width: 800,
+                                    height: 800
                                 })
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx("section", {
                                 className: (style_module_default()).example,
                                 children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                     loading: "eager",
-                                    src: "/lifestyle/3.jpg",
+                                    src: "/lifestyle/3.png",
                                     alt: "Picture of the author",
-                                    width: 500,
-                                    height: 500
+                                    width: 800,
+                                    height: 800
                                 })
                             })
                         ]

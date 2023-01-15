@@ -558,15 +558,14 @@ function Header_component({ seo  }) {
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().tools),
                         children: [
-                            !isAuth ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+                            !isAuth ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().tool),
                                 onClick: ()=>{
-                                    setBurger(false);
                                     dispatch((0,_redux_slices_ui__WEBPACK_IMPORTED_MODULE_5__/* .setAuthFormRedirect */ .lc)(""));
                                     dispatch((0,_redux_slices_ui__WEBPACK_IMPORTED_MODULE_5__/* .setAuthFormMessage */ .O1)(""));
                                     dispatch((0,_redux_slices_ui__WEBPACK_IMPORTED_MODULE_5__/* .setAuthFormShow */ .TO)(true));
+                                    setBurger(false);
                                 },
-                                href: "/cart",
-                                className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().tool),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                     className: (_header_module_css__WEBPACK_IMPORTED_MODULE_7___default().icon),
                                     src: "/base/cart.png",
@@ -679,7 +678,6 @@ function App({ Component , pageProps , ...rest }) {
     const { pathname  } = (0,next_router__WEBPACK_IMPORTED_MODULE_9__.useRouter)();
     const startWith = pathname.startsWith("/admin");
     const { seo  } = pageProps;
-    console.log(seo);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_5___default()), {

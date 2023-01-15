@@ -45,13 +45,14 @@ export default function Header_component({seo}: any) {
                 </div>
                 <div className={styles.tools}>
                     {!isAuth ? (
-                        <Link onClick={() => {
-                            setBurger(false)
+                        <button className={styles.tool} onClick={() => {
                             dispatch(setAuthFormRedirect(""))
                             dispatch(setAuthFormMessage(""))
-                            dispatch(setAuthFormShow(true))}} href="/cart" className={styles.tool}>
+                            dispatch(setAuthFormShow(true))
+                            setBurger(false)
+                        }}>
                             <img className={styles.icon} src="/base/cart.png" alt=""/>
-                        </Link>
+                        </button>
                     ) : (
                         <Link onClick={() => {
                             setBurger(false)}} href="/cart" className={styles.tool}>

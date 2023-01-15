@@ -5,12 +5,13 @@
   "/404": "pages/404.js",
   "/catalog": "pages/catalog.js",
   "/product/[id]": "pages/product/[id].js",
-  "/admin/auth": "pages/admin/auth.js",
   "/admin/[tool]": "pages/admin/[tool].js",
+  "/admin/access-denied": "pages/admin/access-denied.js",
+  "/admin/auth": "pages/admin/auth.js",
+  "/admin": "pages/admin.js",
+  "/admin/profile": "pages/admin/profile.js",
   "/cart": "pages/cart.js",
   "/": "pages/index.js",
-  "/profile": "pages/profile.js",
-  "/admin/access-denied": "pages/admin/access-denied.js",
-  "/admin/profile": "pages/admin/profile.js",
-  "/admin": "pages/admin.js"
+  "/info/[info]": "pages/info/[info].js",
+  "/profile": "pages/profile.js"
 }

@@ -30,7 +30,6 @@ function App({ Component, pageProps, ...rest }: AppProps) {
   const startWith = pathname.startsWith('/admin')
 
   const {seo} = pageProps
-  console.log(seo)
 
   return <>
     <Head>

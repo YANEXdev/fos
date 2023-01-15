@@ -254,7 +254,6 @@ function Catalog(props) {
         try {
             const fetched = await Get("/product/getAll?get=0");
             setData(fetched);
-            console.log(fetched);
         } catch (e) {}
     };
     (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{
